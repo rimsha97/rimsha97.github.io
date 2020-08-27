@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Food Order Form</title>
+	<link rel="stylesheet" type="text/css" href="pro.css">
+	<link rel="icon" type="image/icon" href="https://i.pinimg.com/originals/01/be/7e/01be7eb316abb4dd89675274dbc0cd21.jpg">
+	<script type="text/javascript">
+		function validateFirstName() {
+			var fName= document.getElementById("firstName").value;
+			var rel= /^[a-zA-Z\s\'\-]{2,15}$/;
+			if(rel.test(fName)){
+				document.getElementById("firstNamePrompt").style.color="green";
+				document.getElementById("firstNamePrompt").innerHTML="<strong>valid</strong>"
+				return true;
+			}
+			else{
+
+				document.getElementById("firstNamePrompt").style.color="red";
+				document.getElementById("firstNamePrompt").innerHTML="<strong>Enter value between 2 and 15</strong>";
+				return false;
+			}
+		}
+
+		function validateLastName() {
+			var lname= document.getElementById("lastName").value;
+			var rel= /^[a-zA-Z\s\'\-]{2,25}$/;
+			if (rel.test(lname)){
+				document.getElementById("lastNamePrompt").style.color="green";
+				document.getElementById("lastNamePrompt").innerHTML="<strong>valid</strong>"
+				return true;
+			}
+			else{
+				document.getElementById("lastNamePrompt").style.color="red";
+				document.getElementById("lastNamePrompt").innerHTML="<strong>Enter valye between 2 and 25</strong>"
+				return false;
+			}
+		}
+
+		function validatePass() {
+			var field= document.getElementById("pass").value;
+
+			if(field.length<5)
+			{
+				document.getElementById("passPrompt").innerHTML= "Too short";
+				document.getElementById("passPrompt").style.color="red";
+			}
+			else
+			{
+				document.getElementById("passPrompt").innerHTML="That's long enough"
+			}
+			
+		}
+
+		function showAlert(){
+			alert("The page has been loaded");
+		}
+	</script>
+
+</head>
+<body onload="showAlert()">
+
+	<img id="image" src="https://mir-s3-cdn-cf.behance.net/projects/404/d407e298634635.Y3JvcCwxMTkyLDkzMywxMDMsMA.jpg">
+
+	<h1> Foodilicious </h1>
+
+	<p><em>This form is an online food order form. Its purpose is for customers to order food online. Due to the COVID 19' situation people are unable to get out and dine in so this form fulfills their cravings to order food online. This form is very interactive and is also very responsive.</em></p>
+
+	<h3>Delivery details</h3>
+
+	<form action='#'>
+		<div id="fullpage">
+
+			<table border="0">
+				<tr>
+					<td class="label_col">First Name</td>
+					<td class="input_col"><input id="firstName"type="text" name="firstname" onblur="validateFirstName()"required>
+					<td class="feedback_col"><span id="firstNamePrompt">&nbsp;</span></td>
+				</tr>
+
+				<tr>
+					<td class="label_col">Last Name</td>
+					<td class="input_col"><input id="lastName" type="text" name="lastname" onblur="validateLastName()"></td>
+					<td class="feedback_col"><span id="lastNamePrompt">&nbsp;</span></td>
+				</tr>
+
+				<tr>
+					<td class="label_col">Password</td>
+					<td class="input_col"><input id="pass" type="Password" name="pass" onblur="validatePass()"></td>
+					<td class="feedback_col"><span id="passPrompt">&nbsp;</span></td>
+				</tr>
+
+				<tr>
+					<td class="label_col">Phone Number</td>
+					<td class="input_col"><input id="number" type="number" name="number"></td>
+					<td class="feedback_col"><span id="numberPrompt">xxx-xxx-xx</span></td>
+				</tr>
+
+				<tr>
+					<td class="label_col">Pizza</td>
+					<td class="input_col"><input type="radio" name="food"></td>
+				</tr>
+				
+				<tr>
+					<td class="label_col">Tacos</td>
+					<td class="input_col"><input type="radio" name="food"></td>
+				</tr>
+
+				<tr>
+					<td class="label_col">Burgers</td>
+					<td class="input_col"><input type="radio" name="food"></td>
+				</tr>
+
+				<tr>
+					<td class="label_col">Cakes</td>
+					<td class="input_col"><input type="radio" name="food"></td>
+				</tr>
+
+				<tr>
+					<td class="label_col">I prefer dine-in</td>
+					<td class="input_col"><input type="checkbox" name="review"></td>
+
+					<td class="label_col">I prefer ordering online</td>
+					<td class="input_col"><input type="checkbox" name="review"></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+
+
+
+</body>
+</html>

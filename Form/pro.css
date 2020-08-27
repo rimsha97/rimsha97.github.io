@@ -1,0 +1,41 @@
+body{
+	background-color: #FFE0B8;
+}
+
+h1{
+ 
+ 	clear: left;
+ 	color: #F55200;
+
+}
+
+p{
+	font-size: 25px;
+}
+
+.label_col{
+	text-align: right;
+
+}
+
+.input_col{
+	text-align: left;
+}
+
+.feedback_col{
+	text-align: center;
+	vertical-align: middle;
+	color: orange;
+	font-size: small;
+}
+
+#fullpage{
+	margin: 50px;
+}
+
+#image{
+
+	width: 150px;
+	float: left;
+	border-radius: 100px;
+}
